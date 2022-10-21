@@ -3,7 +3,7 @@ import com.google.protobuf.gradle.*
 val grpcKotlinVersion = "1.2.0"
 val grpcVersion = "1.50.2"
 val protobufVersion = "3.21.8"
-val coroutinesVersion = "1.6.0"
+val coroutinesVersion = "1.6.4"
 
 plugins {
     id("org.jetbrains.kotlin.jvm") version "1.6.21"
@@ -29,24 +29,23 @@ repositories {
 }
 
 dependencies {
-    implementation("io.grpc:grpc-kotlin-stub:$grpcKotlinVersion")
-    implementation("io.grpc:protoc-gen-grpc-kotlin:$grpcKotlinVersion")
-    implementation("io.grpc:grpc-protobuf:$grpcVersion")
     implementation("com.google.protobuf:protobuf-kotlin:$protobufVersion")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
 
+
+    implementation("io.grpc:grpc-kotlin-stub:$grpcKotlinVersion")
+    implementation("io.grpc:grpc-protobuf:$grpcVersion")
     implementation("io.grpc:grpc-services")
-    implementation("io.micronaut:micronaut-management")
-
-    implementation("io.micronaut.grpc:micronaut-grpc-server-runtime:3.3.1")
 
     implementation("io.micronaut:micronaut-jackson-databind")
     implementation("io.micronaut.grpc:micronaut-grpc-runtime")
+    implementation("io.micronaut.grpc:micronaut-grpc-server-runtime:3.3.1")
     implementation("io.micronaut.kotlin:micronaut-kotlin-extension-functions")
     implementation("io.micronaut.kotlin:micronaut-kotlin-runtime")
     implementation("io.micronaut.problem:micronaut-problem-json")
+
     implementation("jakarta.annotation:jakarta.annotation-api")
 
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
     implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
 
@@ -54,13 +53,9 @@ dependencies {
     runtimeOnly("org.apache.logging.log4j:log4j-api:2.19.0")
     runtimeOnly("org.apache.logging.log4j:log4j-slf4j-impl:2.19.0")
 
-    implementation("io.micronaut:micronaut-validation")
-
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
 
-
     testImplementation("io.micronaut:micronaut-http-client")
-
 }
 
 buildscript {
