@@ -1,0 +1,6 @@
+applicationType: grpc
+defaultPackage: co.brianarmstrong
+testFramework: kotest
+sourceLanguage: kotlin
+buildTool: gradle_kotlin
+features: [ annotation-api, app-name, gradle, grpc, jackson-databind, kotest, kotlin, kotlin-application, kotlin-build, kotlin-extension-functions, log4j2, micronaut-build, problem-json, readme, shade, yaml ]
