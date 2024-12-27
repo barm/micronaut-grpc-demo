@@ -6,6 +6,6 @@ import jakarta.inject.Singleton
 class DemoEndpoint : DemoServiceGrpcKt.DemoServiceCoroutineImplBase() {
     override suspend fun send(request: DemoRequest): DemoReply =
         demoReply {
-            message = "hi ${request.name}"
+            message = "Hi there, ${request.name}!"
         }
 }
